@@ -1,9 +1,6 @@
-import 'package:event_seating_2d/components/table.dart';
-import 'package:event_seating_2d/screens/floor.dart';
+import 'package:event_seating_2d/screens/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'components/seat.dart';
 
 void main() {
   runApp(
@@ -13,21 +10,18 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const Scaffold(
-        body: TableComponent(
-          tableId: '1',
-        ),
+        body: NavigatorScreen(),
       ),
     );
   }
